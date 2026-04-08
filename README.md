@@ -1,4 +1,4 @@
-# FMIC: Feature-Guided Machine-Centric Image Coding
+# FMC: Feature-Guided Machine-Centric Compression
 
 Feature-guided block-wise image blending method for machine-centric image compression, suitable for object detection and instance segmentation tasks.
 
