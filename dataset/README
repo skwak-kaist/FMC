@@ -1,0 +1,16 @@
+1) ./OpenImages/annotations_5k에 Nokia가 제공하는 annotaions와 input image list 파일들이 모두 포함되어 있음
+
+2) Docker 파일(docker 폴더)의 다음 부분도 확인하여 사용하는 리눅스 PC의 Dataset 폴더 경로에 맞도록 수정해야 함
+
+    -v /home/${USER}/Dataset:/home/${USER}/Dataset
+
+    Dataset 폴더 설정은 심볼릭 링크 사용 (옮기거나 복사하지 말고)
+    위 Docker 파일의 설정에 의해 OpenImages Dataset 폴더가 ~/Dataset/OpenImages/validation에 있다고 하면
+    $ cd OpenImages
+    $ ln -s ~/Dataset/OpenImages/validation/ validation
+
+* 연결해야할 폴더
+- Cityscapes: leftImg8bit_trainvaltest/leftImg8bit/val
+- OpenImages: validation 
+- SFU: SFU-HW-png-VCM
+- TVD: TVD_Image_VCM

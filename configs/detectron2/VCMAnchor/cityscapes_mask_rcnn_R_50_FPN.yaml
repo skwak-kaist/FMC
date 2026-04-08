@@ -1,0 +1,16 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  # Given weights for Cityscapes at Detectron2 model zoo site
+  WEIGHTS: https://dl.fbaipublicfiles.com/detectron2/Cityscapes/mask_rcnn_R_50_FPN/142423278/model_final_af9cf5.pkl
+
+  MASK_ON: True
+  ROI_HEADS:
+    NUM_CLASSES: 8
+
+INPUT:
+  MIN_SIZE_TEST: 0 # 1024 (0 means that the original image is used without resizing)
+  MAX_SIZE_TEST: 0 # 2048 (0 means that the original image is used without resizing)
+
+DATASETS:
+  TEST: ("cityscapes_fine_instance_seg_val",)
+

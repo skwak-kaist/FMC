@@ -1,0 +1,4 @@
+pyzmq==18.1.0
+opencv-python==4.6.0.66
+psutil==5.9.1
+ptflops==0.6.9

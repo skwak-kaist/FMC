@@ -1,0 +1,22 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  MASK_ON: False
+
+  # WEIGHTS: "detectron2://ImageNetPretrained/FAIR/X-101-32x8d.pkl"
+  # Given weights for object detection at Detectron2 model zoo site (pretrained with COCO dataset suitable for citypersons)
+  WEIGHTS: "detectron2://COCO-Detection/faster_rcnn_X_101_32x8d_FPN_3x/139173657/model_final_68b088.pkl"
+
+  PIXEL_STD: [57.375, 57.120, 58.395]
+  RESNETS:
+    STRIDE_IN_1X1: False  # this is a C2 model
+    NUM_GROUPS: 32
+    WIDTH_PER_GROUP: 8
+    DEPTH: 101
+
+INPUT:
+  MIN_SIZE_TEST: 0 # 1024 (0 means that the original image is used without resizing)
+  MAX_SIZE_TEST: 0 # 2048 (0 means that the original image is used without resizing)
+
+DATASETS:
+  TEST: ("citypersons_object_det_val",) # user defined dataset name
+
